@@ -320,7 +320,7 @@ nav .fa-solid{
 
 @media only screen and (max-width: 600px){
     #header{
-        background-image: url(logo.jpg);
+        background-image: url(realbg.jpg);
         background-size: cover;
         background-repeat: no-repeat;
         background-position:top;
