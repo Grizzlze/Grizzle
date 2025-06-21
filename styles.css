@@ -1,0 +1,722 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'poppins', sans-serif;
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+    scroll-padding:10rem;
+}
+body{
+    background-color: #060606;
+    color: #fff;
+}
+#header{
+    width: 100%;
+    height: 100vh;
+  
+    background-size:cover;
+    background-position: center;
+    padding-top: 70px;
+}
+.container{
+    padding: 10px 10%;
+}
+.logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #ff004f;
+}
+
+
+nav ul li{
+    width: 100%;      /* submenu takes full width of sidebar */
+    box-sizing: border-box;
+    padding-left: 20px; /* indent submenu items */
+
+
+
+    display: inline-block;
+    list-style: none;
+    margin: 10px 20px;
+}
+nav ul li {
+  padding-left: 20px;
+  margin: 20px 0;
+  list-style: none;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  position: relative;
+  display: block;
+  font-weight: 550;
+}
+
+nav ul li a::after {
+  content: '';
+  width: 0%;
+  height: 3px;
+  background: #fff;
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  transition: 0.3s;
+
+}
+nav ul li a:hover::after{
+    width: 100%;
+}
+.header-text{
+    margin-top: 20%;
+    font-size: 30px;
+}
+.header-text h1{
+    font-size: 60px;
+    margin-top: 20px;
+}
+.header-text h1 span{
+    color: #ff004f;
+}
+.header-text p{
+    font-size: 50px;
+}
+
+
+
+
+
+
+
+
+
+/*-------------about-------------------------*/
+#about{
+    padding: 80px 0;
+    color: #ababab;
+}
+.row{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+}
+.about-col-1{
+    flex-basis: 35%;
+}
+.about-col-1 img{
+    width: 100%;
+    border-radius: 15px;
+}
+.about-col-2{
+    flex-basis: 60%;
+}
+.sub-title{
+    font-size: 60px;
+    font-weight: 600;
+    color: #fff;
+}
+.tab-titles{
+    display: flex;
+    margin: 20px 0 40px;
+}
+.tab-links{
+    margin-right: 50px;
+    font-size: 40px;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+}
+.tab-links::after{
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #ff004f;
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    transition: 0.5s
+}
+.tab-links.active-link::after{
+    width: 50%;
+}
+.tab-contents ul li{
+    list-style: none;
+    margin: 10px 0
+}
+.tab-contents ul li span{
+    color: #e75b87;
+    font-size: 14px;
+}
+.tab-contents{
+    display: none;
+}
+.tab-contents.active-tab{
+    display: block;
+}
+#skills span{
+    margin-bottom: 10px;
+}
+
+/*----------------------------contact----------------------*/
+
+.contact-left{
+    flex-basis: 35%;
+}
+.contact-right{
+    flex-basis: 60%;
+}
+.contact-left p{
+    margin-top: 30px;
+}
+.contact-left p i{
+    color: #ff004f;
+    margin-right: 15px;
+    font-size: 25px;
+}
+.social-icons{
+    margin-top: 30px;
+}
+.social-icons a{
+    font-size: 30px;
+    text-decoration: none;
+    margin-right: 15px;
+    color: #ababab;
+    display: inline-block;
+    transition: transform 0.5s;
+}
+.social-icons a:hover{
+    color: #ff004f ;
+    transform: translateY(-5px);
+}
+.btn.btn2{
+    display: inline-block;
+    background: #ff004f;
+}
+.contact-right form{
+    width: 100%;
+}
+form input, form textarea{
+    width: 100%;
+    border: 0;
+    outline: none;
+    background: #262626;
+    padding: 15px;
+    margin: 15px 0;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 6px;
+}
+form .btn2{
+    padding: 14px 60px;
+    font-size: 18px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+.copyright{
+    width: 100%;
+    text-align: center;
+    padding: 25px 0;
+    background: #262626;
+    font-weight: 300;
+    margin-top: 20px;
+}
+
+
+
+
+
+
+
+
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  background: rgba(177, 94, 149, 0.8);
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+  transition: top 0.3s ease;
+
+}
+
+nav ul {
+  position: fixed;
+  top: 0;
+  left: -200px;
+  width: 200px;
+  height: 100%;
+  background: #ff004f;
+  padding-top: 80px;
+  transition: left 0.5s;
+  z-index: 999;
+  list-style: none;
+  overflow-y: auto;
+}
+
+nav ul .fa-xmark {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+nav ul li {
+  padding-left: 20px;
+  margin: 20px 0;
+  list-style: none;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  position: relative;
+  display: block;
+  font-weight: 550;
+}
+
+nav ul li a::after {
+  content: '';
+  width: 0%;
+  height: 3px;
+  background: #fff;
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  transition: 0.3s;
+}
+
+
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+nav .fa-bars {
+  font-size: 28px;
+  color: #fff;
+  cursor: pointer;
+}
+
+
+/*----------css for small screens----------*/
+nav .fa-solid{
+    display: none;
+}
+
+@media only screen and (max-width: 600px){
+    #header{
+        background-image: url(realbgeditedlowb.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position:top;
+        padding-top: 10 0px;
+    }
+    .header-text{
+        margin-top: 100%;
+        font-size: 16px;
+    }
+    .header-text h1{
+        font-size: 30px;
+    }
+nav .fa-bars {
+    display: block;
+    font-size: 28px;
+    color: #fff;
+    cursor: pointer;
+}
+    nav .fa-solid{
+        display: block;
+        font-size: 25px;
+    }
+   nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  background: rgba(17, 16, 17, 0.8);
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+  transition: top 0.3s ease;
+
+}
+
+nav ul {
+  position: fixed;
+  top: 0;
+  left: -200px;
+  width: 200px;
+  height: 100%;
+  background: #ff0151;
+  padding-top: 20px;
+  transition: left 0.5s;
+  z-index: 999;
+  list-style: none;
+  overflow-y: auto;
+}
+
+nav ul .fa-xmark {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+nav ul li {
+  padding-left: 20px;
+  margin: 20px 0;
+  list-style: none;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 20px;
+  position: relative;
+  display: block;
+  font-weight: 550;
+}
+
+nav ul li a::after {
+  content: '';
+  width: 0%;
+  height: 3px;
+  background: #fff;
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  transition: 0.3s;
+  
+}
+
+
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+nav .fa-bars {
+  font-size: 28px;
+  color: #fff;
+  cursor: pointer;
+}
+    .sub-title{
+        font-size: 40px;
+    }
+    .about-col-1, .about-col-2{
+        flex-basis: 100%;
+    }
+    .about-col-1{
+        margin-bottom: 30px;
+    }
+    .about-col-2{
+        font-size: 14px;
+    }
+    .tab-links{
+        font-size: 16px;
+        margin-right: 20px;
+    }
+    .contact-left, .contact-right{
+        flex-basis: 100%;
+    }
+    .copyright{
+        font-size: 14px;
+    }
+    .header-text h1{
+        
+        font-size: 38px;
+    }
+    .header-text p{
+        font-size: 20px;
+    }
+    .header-text{
+        
+        padding-top: 50px;
+        margin-top: 30px;
+    }
+
+
+    
+}
+@media (max-width: 900px) {
+    /* Adjust to two columns for smaller screens */
+    .services-list, .work-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    /* Adjust to one column for small screens */
+    .services-list, .work-list {
+        grid-template-columns: 1fr;
+    }
+}
+#msg{
+    color: #61b752;
+    margin-top: -10px;
+    display: block;
+}
+
+
+
+
+@media (max-width: 900px) {
+    /* Adjust to two columns for smaller screens */
+    .services-list1, .work-list1 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    /* Adjust to one column for small screens */
+    .services-list1, .work-list1 {
+        grid-template-columns: 1fr;
+    }
+}
+@media only screen and (min-width: 601px) {
+    nav ul {
+        position: fixed;
+        top: 0;
+        left: -200px;
+        width: 200px;
+        height: 100%;
+        background: #ff004f;
+        padding-top: 50px;
+        transition: left 0.5s;
+        z-index: 999;
+    }
+
+    nav ul .fa-xmark {
+        right: 20px;
+    }
+}
+
+nav ul li.dropdown {
+  position: relative;
+}
+
+nav ul li .dropdown-menu {
+  display: none;
+  background: #ff004f;
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+  position: static; /* so it pushes items down in sidebar */
+}
+
+nav ul li .dropdown-menu li {
+  margin: 0;
+  padding: 8px 20px;
+}
+
+nav ul li .dropdown-menu li a {
+  font-size: 16px;
+  color: #fff;
+}
+
+nav ul li.dropdown.open > .dropdown-menu {
+  display: block;
+}
+
+nav ul li.dropdown > a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav ul li.dropdown > a i.fa-caret-down {
+  margin-left: 8px;
+  font-size: 14px;
+}
+/* ----------------------disc------------------------------------*/
+.disc {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 50px 30px;
+    border-radius: 20px;
+    max-width: 1000px;
+    margin: 40px auto;
+    text-align: center;
+    color: #ffffff;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+    animation: fadeInUp 1s ease-out;
+}
+
+.disc h2 {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #00ffc8;
+    text-shadow: 0 0 8px rgba(0, 255, 200, 0.5);
+}
+
+.disc p {
+    font-size: 18px;
+    line-height: 1.7;
+    margin: 0 auto;
+    max-width: 850px;
+    font-weight: 300;
+    color: #e2e2e2;
+}
+
+.disc ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 30px;
+    font-size: 18px;
+}
+
+.disc ul li {
+    margin: 10px 0;
+    color: #ff0066;
+    font-weight: 500;
+    position: relative;
+    padding-left: 25px;
+}
+
+.disc ul li::before {
+    content: '✔';
+    position: absolute;
+    left: 0;
+    color: #00ffc8;
+}
+
+
+
+
+
+
+/*----------------final-------------------------------------*/
+
+
+
+
+.final {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    color: #ffffff;
+    padding: 60px 30px;
+    border-radius: 20px;
+    max-width: 1000px;
+    margin: 50px auto;
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+    animation: fadeInUp 1s ease-out;
+}
+
+.final p {
+    font-size: 22px;
+    line-height: 1.8;
+    font-weight: 400;
+    margin: 0;
+    letter-spacing: 0.3px;
+}
+
+.final .highlight {
+    display: block;
+    font-size: 36px;
+    font-weight: 700;
+    color: #00ffcc;
+    margin: 20px 0 10px;
+    text-shadow: 0 0 10px rgba(0, 255, 204, 0.7);
+}
+
+.final .tagline {
+    font-size: 16px;
+    font-style: italic;
+    opacity: 0.8;
+    margin-top: 20px;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+
+
+/* -------------------------------drop down ------------------------------*/
+
+
+/* Dropdown container */
+nav ul li.dropdown {
+    position: relative;
+}
+
+/* Hide dropdown menu by default */
+nav ul li .dropdown-menu {
+    display: none;
+    list-style: none;
+    background: #ff004f;
+    padding-left: 0;
+    margin: 0;
+    position: static; 
+    padding: 10px,0px,0px;
+}
+
+
+nav ul li .dropdown-menu li {
+    margin: 0;
+    
+     padding: 8px 15px;
+}
+
+nav ul li .dropdown-menu li a {
+    color: #fff;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+
+nav ul li.dropdown.open > .dropdown-menu {
+    display: block;
+}
+
+nav ul li.dropdown > a {
+    display: inline-flex;      
+    align-items: center;        
+}
+
+nav ul li.dropdown > a i.fa-caret-down {
+    margin-right: 8px;          
+    font-size: 14px;            
+}
+
+
+
+nav ul li .dropdown-menu li a {
+  font-size: 20px;
+  color: #fff;
+}

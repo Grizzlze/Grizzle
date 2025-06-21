@@ -1,0 +1,300 @@
+/* Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #222;
+}
+
+/* Body */
+body {
+  background: #000000;
+  padding: 16px;
+  color: #fff; /* For better contrast with black background */
+  background-image: url(utubebg.jpg);
+}
+
+/* Navbar Styles */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  background: rgba(49, 40, 40, 0.8);
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+  transition: top 0.3s ease;
+
+}
+
+nav ul {
+  position: fixed;
+  top: 0;
+  left: -200px;
+  width: 200px;
+  height: 100%;
+  background: #ff004f;
+  padding-top: 30px;
+  transition: left 0.5s;
+  z-index: 999;
+  list-style: none;
+  overflow-y: auto;
+}
+
+nav ul .fa-xmark {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+nav ul li {
+  padding-left: 20px;
+  margin: 20px 0;
+  list-style: none;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 22px;
+  position: relative;
+  display: block;
+  font-weight: 550;
+}
+
+nav ul li a::after {
+  content: '';
+  width: 0%;
+  height: 3px;
+  background: #fff;
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  transition: 0.3s;
+}
+
+
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+nav .fa-bars {
+  font-size: 28px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ff004f;
+}
+
+/* Dropdown */
+nav ul li.dropdown {
+  position: relative;
+}
+
+nav ul li .dropdown-menu {
+  display: none;
+  background: #ff004f;
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+  position: static; /* so it pushes items down in sidebar */
+}
+
+nav ul li .dropdown-menu li {
+  margin: 0;
+  padding: 8px 20px;
+}
+
+nav ul li .dropdown-menu li a {
+  font-size: 20px;
+  color: #fff;
+}
+
+nav ul li.dropdown.open > .dropdown-menu {
+  display: block;
+}
+
+nav ul li.dropdown > a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav ul li.dropdown > a i.fa-caret-down {
+  margin-left: 8px;
+  font-size: 14px;
+}
+
+/* Header */
+header {
+  text-align: center;
+  margin: 80px 0 24px; /* top margin pushed down for fixed nav */
+}
+
+header h1 {
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 40px;
+}
+
+/* Product list styles */
+
+.product-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.product-item {
+  background: rgb(232, 232, 232);
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgb(0 0 0 / 0.1);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  transition: box-shadow 0.3s ease;
+  color: #0f1111;
+}
+
+.product-item:hover {
+  box-shadow: 0 8px 20px rgb(0 0 0 / 0.15);
+}
+
+.image-wrapper {
+  width: 100%;
+  margin-bottom: 16px;
+  display: flex;
+  justify-content: center;
+}
+
+.image-wrapper img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: contain;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-weight: 700;
+}
+
+.product-name {
+  font-size: 1.6rem;
+  font-weight: 800;
+}
+
+.price {
+  font-size: 1.3rem;
+  color: #b12704;
+  font-weight: 700;
+}
+
+.description {
+  font-size: 2rem;
+  color: #555;
+  line-height: 1.4;
+}
+
+.action-row {
+  margin-top: 12px;
+  display: flex;
+  justify-content: center;
+}
+
+.btn {
+  background-color: #ffd814;
+  border: 1px solid #fcd200;
+  border-radius: 6px;
+  padding: 15px 25px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  color: #0f1111;
+  font-size: 20px;
+}
+
+.btn:hover {
+  background-color: #f7ca00;
+}
+
+.link {
+  color: rgb(1, 69, 255);
+  text-decoration: underline;
+}
+
+/* Responsive */
+
+@media only screen and (max-width: 600px) {
+  nav ul {
+    width: 200px;
+    left: -200px;
+    padding-top: 20px;
+  }
+
+  nav ul li {
+    margin: 25px;
+  }
+
+  .product-item {
+    padding: 12px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  background: rgba(49, 40, 40, 0.8);
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+  transition: top 0.3s ease;
+
+
+  /* NEW: smooth transition for sliding up/down */
+  transition: top 0.3s ease;
+}
+
+
+
+.glow-highlight {
+  color: rgb(255, 255, 255);
+  font-weight: 1000;
+  font-size: 2.8em;
+  text-shadow: 0 0 5px rgb(255, 0, 0), 0 0 10px rgb(255, 0, 0);
+}

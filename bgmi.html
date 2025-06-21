@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>UC Checkout</title>
+
+  <link rel="stylesheet" href="style_u.css" />
+  <link rel="stylesheet" href="style_b.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+
+<body>
+
+<!-- NAVIGATION BAR -->
+
+
+<nav>
+  <!-- Hamburger icon -->
+  <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+
+  <!-- Sidebar menu -->
+  <ul id="sidemenu">
+    <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+    <li><a href="index.html">HOME</a></li>
+
+    <li class="dropdown">
+      <a href="#">YOUTUBE <i class="fa-solid fa-caret-down"></i></a>
+      <ul class="dropdown-menu">
+        <li><a href="youtube_buy.html">Buy</a></li>
+        <li><a href="https://wa.me/919444455908">Sell</a></li>
+      </ul>
+    </li>
+
+    <li class="dropdown">
+      <a href="#">INSTAGRAM <i class="fa-solid fa-caret-down"></i></a>
+      <ul class="dropdown-menu">
+        <li><a href="insta_buy.html">Buy</a></li>
+        <li><a href="https://wa.me/919444455908">Sell</a></li>
+      </ul>
+    </li>
+
+    <li><a href="ssm.html">SMM SERVICES</a></li>
+    <li><a href="bgmi.html">BGMI UC</a></li>
+    <li><a href="index.html#contact">CONTACT</a></li>
+  </ul>
+
+  <!-- Logo -->
+  <a href="index.html"><img src="img/logo.jpg" class="logo" alt="Logo"></a>
+</nav>
+
+
+
+
+<!-- MAIN CARD -->
+<div class="card">
+  <h2>BGMI UC</h2>
+
+  <div class="option">
+    <i class="fas fa-layer-group"></i>
+    <span><strong>UC</strong></span>
+  </div>
+
+  <div class="option">
+    <i class="fas fa-hashtag"></i>
+    <select id="amount">
+      <option disabled selected>Amount</option>
+    </select>
+  </div>
+
+  <div class="option price-display">
+    <i class="fas fa-indian-rupee-sign"></i>
+    <span id="price">Price: -</span>
+  </div>
+
+  <button class="buy-btn">Buy Now</button>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- SCRIPT -->
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const amountSelect = document.getElementById('amount');
+    const priceDisplay = document.getElementById('price');
+    const phoneNumber = '919444455908';
+
+    // Example UC pricing
+    const ucData = {
+      amounts: ['1800 UC', '900 UC', '10800 UC'],
+      prices: ['₹1400', '₹6500', '₹7800']
+    };
+
+    // Populate amount dropdown
+    function populateAmounts() {
+      ucData.amounts.forEach(amount => {
+        const option = document.createElement('option');
+        option.textContent = amount;
+        amountSelect.appendChild(option);
+      });
+    }
+
+    populateAmounts();
+
+    amountSelect.addEventListener('change', () => {
+      const selectedAmount = amountSelect.value;
+      const index = ucData.amounts.indexOf(selectedAmount);
+      if (index !== -1) {
+        priceDisplay.textContent = `Price: ${ucData.prices[index]}`;
+      } else {
+        priceDisplay.textContent = 'Price: -';
+      }
+    });
+
+    document.querySelector('.buy-btn').addEventListener('click', () => {
+      const amount = amountSelect.value;
+      const price = priceDisplay.textContent.replace('Price: ', '').trim();
+
+      if (!amount || price === '-' || amount === 'Amount') {
+        alert('Please select the amount.');
+        return;
+      }
+
+      const message = `Hello, I am interested in buying UC:\nQuantity - ${amount}\nPrice - ${price}\nCan you please assist me further?`;
+      const encodedMessage = encodeURIComponent(message);
+      const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+      window.open(whatsappURL, '_blank');
+    });
+  });
+
+  // Navbar script
+  function openmenu() {
+    document.getElementById('sidemenu').style.left = "0";
+  }
+
+  function closemenu() {
+    document.getElementById('sidemenu').style.left = "-200px";
+  }
+
+  const dropdowns = document.querySelectorAll('#sidemenu li.dropdown > a');
+  dropdowns.forEach(dropdown => {
+    dropdown.addEventListener('click', function (e) {
+      e.preventDefault();
+      this.parentElement.classList.toggle('open');
+    });
+  });
+</script>
+
+
+
+
+<script>
+let lastScrollTop = 0;
+const nav = document.querySelector('nav');
+
+window.addEventListener('scroll', () => {
+  const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+  if (scrollTop > lastScrollTop) {
+    // Scrolling down - hide navbar
+    nav.style.top = '-70px'; // move navbar up (hide)
+  } else {
+    // Scrolling up - show navbar
+    nav.style.top = '0';
+  }
+
+  lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For Mobile or negative scrolling
+});
+
+</script>
+
+
+<script>
+  // Sidebar open/close functions
+function openmenu() {
+  document.getElementById('sidemenu').style.left = "0";
+}
+
+function closemenu() {
+  document.getElementById('sidemenu').style.left = "-200px";
+}
+
+const sidemenu1 = document.getElementById('sidemenu');
+const hamburger = document.querySelector('nav i.fa-bars');
+
+// Close sidebar if clicked outside sidebar and hamburger icon
+document.addEventListener('click', (event) => {
+  const isClickInsideSidebar = sidemenu1.contains(event.target);
+  const isClickOnHamburger = hamburger.contains(event.target);
+
+  if (!isClickInsideSidebar && !isClickOnHamburger) {
+    closemenu();
+  }
+});
+
+</script>
+
+</body>
+</html>

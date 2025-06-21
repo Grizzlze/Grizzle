@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/f20e08f5de.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+
+
+
+
+
+
+<body>
+    <div id="header">
+        <div class="container">
+
+
+
+
+
+
+
+
+            <nav>
+                <i class="fa-solid fa-bars" onclick="openmenu()"></i> 
+
+                <ul id="sidemenu">
+                    <li><a href="index.html">HOME</a></li>
+
+                    <li class="dropdown">
+                        <a href="#"><i class="fa-solid fa-caret-down"></i> YOUTUBE</a>
+
+
+                        <ul class="dropdown-menu">
+                            <li><a href="youtube_buy.html">Buy</a></li>
+                            <li><a href="https://wa.me/919444455908">Sell</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="#"><i class="fa-solid fa-caret-down"></i>INSTAGRAM</a>
+
+                        <ul class="dropdown-menu">
+                            <li><a href="insta_buy.html">Buy</a></li>
+                            <li><a href="https://wa.me/919444455908">Sell</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="ssm.html">SMM SERVICES</a></li>
+                    <li><a href="bgmi.html">BGMI UC</a></li>
+                    <li><a href="index.html#contact">CONTACT</a></li>
+                    <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+                </ul>
+
+
+                <a href="index.html"><img src="logo.jpg" class="logo" alt="Logo"></a>
+
+            </nav>
+
+
+
+
+
+
+
+
+            
+
+
+            <div class="header-text">
+                <p></p>
+                <h1>Heyy ,Welcome To <span>Grizzle Mart</span> <br> </h1>
+                <h2></h2>
+            </div>
+
+
+        </div>
+    </div>
+    <div class="disc">
+        <h2>WELCOME TO GRIZZLE MART ✨</h2>
+        <p>
+            Trust Is Built Through <strong>Consistency</strong>, Not Just Words. <br>
+            Is A Secure Online Marketplace For Trading Digital Assets With Confidence.
+            Whether You're A Buyer Or An Owner, We Ensure A Smooth, Verified, And Transparent Experience.
+        </p>
+
+        <ul>
+            <li>Verified YouTube Channels</li>
+            <li>Trusted Instagram Accounts</li>
+            <li>BGMI Accounts – Budget to Premium</li>
+            <li>Reliable SMM Services</li>
+        </ul>
+    </div>
+
+
+    <div class="final">
+        <p>
+            GRIZZLE STORE [Since 2018]<br>
+            We Provide <strong>Safe & Secured </strong>goods– From Budget to Premium Ranges.
+        </p>
+        <span class="highlight">OVER 1000+ HAPPY CUSTOMER </span>
+        <p>
+            <strong></strong> and still growing strong.<br>
+            <span class="tagline">“Self-trust is the first secret of success.”</span><br><br>
+            Need help? Reach out to us anytime.
+        </p>
+    </div>
+
+    <!-------------------contact------------------------------->
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="sub-title">Contact Us</h1>
+                    <p><a href="http://t.me/Grizzlepubg"><i class="fa-solid fa-paper-plane"></i></a>@Grizzlepubg</p>
+                    <p><a href="tel:+919444455918"><i class="fa-solid fa-phone"></i></a>+91 94444 55918</p>
+                    <p><a href="https://wa.me/919444455908"><i class="fa-brands fa-whatsapp"></i></i></a>+91 94444 55908</p>
+                    <div class="social-icons">
+                        <a href="https://www.instagram.com/ig_grizzleplays?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://youtube.com/@grizzleplaysyt?si=E1a3a8RbJ3wkjffb"><i class="fa-brands fa-youtube"></i></a>
+                        
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        <div class="copyright">
+            <p>Made With ❤ in INDIA | © 2025 GRIZZLE Store is a trademark of its respective owners. This site is not
+                affiliated with or endorsed by BGMI or its developers</p>
+        </div>
+    </div>
+
+
+
+    <script>
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+
+        function opentab(tabname) {
+            for (tablink of tablinks) {
+                tablink.classList.remove("active-link");
+            }
+            for (tabcontent of tabcontents) {
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+
+
+    </script>
+    <script>
+        var sidemenu = document.getElementById("sidemenu");
+        function openmenu() {
+            sidemenu.style.left = "0";
+        }
+        function closemenu() {
+            sidemenu.style.left = "-200px";
+        }
+
+    </script>
+    <script>
+        let loadmorebtn = document.querySelector('#loadmore');
+        let currentitem = 3;
+
+        loadmorebtn.onclick = () => {
+            let boxes = [...document.querySelectorAll('.container .work-list .work')];
+            for (var i = currentitem; i < currentitem + 3; i++) {
+                boxes[i].style.display = 'inline-block';
+            }
+            currentitem += 4;
+
+
+
+        }
+    </script>
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbxJjMLI6Z1mvf1MADesPh9Dvj3Dv0jN6T76IwCfyFMrIFE5uxsBVoU-iplKr6O8ema8/exec'
+        const form = document.forms['submit-to-google-sheet']
+
+        const msg = document.getElementById("msg")
+
+        form.addEventListener('submit', e => {
+            e.preventDefault()
+            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                .then(response => {
+                    msg.innerHTML = "Message sent succssfully"
+                    setTimeout(function () {
+                        msg.innerHTML = ""
+                    }, 5000)
+                    form.reset()
+                })
+                .catch(error => console.error('Error!', error.message))
+        })
+    </script>
+
+
+
+
+
+
+
+    <script>
+        let loadmorebtn1 = document.querySelector('#loadmore1');
+        let currentitem1 = 3;
+
+        loadmorebtn1.onclick = () => {
+            let boxes1 = [...document.querySelectorAll('.container .work-list1 .work1')];
+            for (var i = currentitem1; i < currentitem1 + 3; i++) {
+                boxes1[i].style.display = 'inline-block';
+            }
+            currentitem1 += 4;
+
+
+
+        }
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+       
+        const dropdowns = document.querySelectorAll('#sidemenu li.dropdown > a');
+
+        dropdowns.forEach(dropdown => {
+            dropdown.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                this.parentElement.classList.toggle('open');
+            });
+        });
+    </script>
+
+
+
+
+
+
+
+
+
+
+<script>
+let lastScrollTop = 0;
+const nav = document.querySelector('nav');
+
+window.addEventListener('scroll', () => {
+  const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+  if (scrollTop > lastScrollTop) {
+    // Scrolling down - hide navbar
+    nav.style.top = '-70px'; // move navbar up (hide)
+  } else {
+    // Scrolling up - show navbar
+    nav.style.top = '0';
+  }
+
+  lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For Mobile or negative scrolling
+});
+
+</script>
+
+
+
+
+
+
+<script>
+  // Sidebar open/close functions
+function openmenu() {
+  document.getElementById('sidemenu').style.left = "0";
+}
+
+function closemenu() {
+  document.getElementById('sidemenu').style.left = "-200px";
+}
+
+const sidemenu1 = document.getElementById('sidemenu');
+const hamburger = document.querySelector('nav i.fa-bars');
+
+// Close sidebar if clicked outside sidebar and hamburger icon
+document.addEventListener('click', (event) => {
+  const isClickInsideSidebar = sidemenu1.contains(event.target);
+  const isClickOnHamburger = hamburger.contains(event.target);
+
+  if (!isClickInsideSidebar && !isClickOnHamburger) {
+    closemenu();
+  }
+});
+
+</script>
+</body>
+
+</html>
