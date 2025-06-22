@@ -55,7 +55,7 @@ nav ul li.dropdown {
 
 nav ul li .dropdown-menu {
   display: none;
-  background: #ff004f;
+  background: #2c2c2c;
   margin: 0;
   padding-left: 0;
   list-style: none;
@@ -222,7 +222,7 @@ nav ul {
         left: -200px;
         width: 200px;
         height: 100%;
-        background: #ff0151;
+        background: #2c2c2c;
         padding-top: 20px;
         transition: left 0.5s;
         z-index: 999;
