@@ -284,3 +284,13 @@ nav {
   /* NEW: smooth transition for sliding up/down */
   transition: top 0.3s ease;
 }
+
+
+
+
+.glow-highlight {
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  font-size: 2.8em;
+  text-shadow: 0 0 5px rgb(255, 0, 0), 0 0 10px rgb(255, 0, 0);
+}
