@@ -241,7 +241,7 @@ nav {
   left: 0;
   width: 100%;
   height: 70px;
-  background-color: black;
+  background: rgba(177, 94, 149, 0.8);
   z-index: 1000;
   display: flex;
   justify-content: space-between;
