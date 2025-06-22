@@ -254,6 +254,21 @@ nav ul li {
         display: block;
         font-weight: 550;
     }
+nav ul li a::after {
+  content: '';
+  width: 0%;
+  height: 3px;
+  background: #fff;
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  transition: 0.3s;
+}
+
+
+nav ul li a:hover::after {
+  width: 100%;
+}
 
 
 nav ul li.dropdown > a i.fa-caret-down {
