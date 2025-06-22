@@ -103,7 +103,7 @@ nav {
   left: 0;
   width: 100%;
   height: 70px;
-  background: rgba(49, 40, 40, 0.8);
+  background: #2c2c2c;
   z-index: 1000;
   display: flex;
   justify-content: space-between;
