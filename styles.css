@@ -78,7 +78,7 @@ nav ul li a:hover::after{
 }
 .header-text h1{
     font-size: 60px;
-    margin-top: 20px;
+    margin-top: 0px;
 }
 .header-text h1 span{
     color: #ff004f;
@@ -451,8 +451,8 @@ nav .fa-bars {
     }
     .header-text{
         
-        padding-top: 50px;
-        margin-top: 30px;
+        padding-top: 0px;
+        margin-top: 0px;
     }
 
 
